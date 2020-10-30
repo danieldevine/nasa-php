@@ -38,7 +38,6 @@ class Request
                 'headers' => $headers,
             ]);
 
-
             $body = $request->getBody()->getContents();
             $response = json_decode($body);
             return $response;

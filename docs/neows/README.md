@@ -1,5 +1,10 @@
 # Asteroids - NeoWs
 
+- [Asteroids - NeoWs](#asteroids---neows)
+  - [Methods](#methods)
+  - [Examples](#examples)
+  - [Tests](#tests)
+
 NeoWs (Near Earth Object Web Service) is a RESTful web service for near earth Asteroid information. With NeoWs a user can: search for Asteroids based on their closest approach date to Earth, lookup a specific Asteroid with its NASA JPL small body id, as well as browse the overall data-set.
 
 -----
@@ -35,4 +40,8 @@ d($single);
 
 ```
 
+## Tests
 
+```bash
+$ phpunit tests/NeoWTest.php
+```
