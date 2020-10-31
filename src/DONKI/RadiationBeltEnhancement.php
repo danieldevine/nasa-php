@@ -4,18 +4,12 @@ namespace Coderjerk\NasaPhp\DONKI;
 
 use Coderjerk\NasaPhp\Request;
 
-class MagnetopauseCrossing
+class RadiationBeltEnhancement
 {
-    public static $uri = 'DONKI/MPC';
+    public static $uri = 'DONKI/RBE';
 
-    /**
-     * This Endpooint appears to no longer work as expected.
-     * will return null.
-     *
-     * @param array $params
-     * @return Object
-     */
-    public function getMagnetopauseCrossing($params = [])
+
+    public function getRadiationBeltEnhancement($params = [])
     {
         $end_date = date('Y-m-d');
         $start_date = date('Y-m-d', strtotime('-30 days'));

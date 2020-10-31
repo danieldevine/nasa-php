@@ -7,3 +7,4 @@ A PHP Client library to provide a useful abstraction and methods for the complet
 
 - [APOD](docs/apod/README.md)
 - [Asteroid NeoW](docs/neows/README.md)
+- [DONKI](docs/donki/README.md)

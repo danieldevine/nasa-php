@@ -29,6 +29,8 @@ https://api.nasa.gov/DONKI/IPS?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&location=
 - startDate: default to 30 days prior to current UTC date
 - endDate: default to current UTC date
 
+Non functional endpoint
+
 Example:
 https://api.nasa.gov/DONKI/FLR?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=DEMO_KEY
 
@@ -36,12 +38,18 @@ https://api.nasa.gov/DONKI/FLR?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=D
 - startDate: default to 30 days prior to current UTC date
 - endDate: default to current UTC date
 
+Non functional endpoint
+
+
 Example:
 https://api.nasa.gov/DONKI/SEP?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=DEMO_KEY
 
 ## Magnetopause Crossing (MPC)
 - startDate: default to 30 days prior to current UTC date
 - endDate: default to current UTC date
+
+Non functional endpoint
+
 
 Example:
 https://api.nasa.gov/DONKI/MPC?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=DEMO_KEY
