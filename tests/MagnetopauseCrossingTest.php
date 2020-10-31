@@ -11,7 +11,6 @@ class MagnetopauseCrossingTest extends TestCase
 {
     public function testGetMagnetopauseCrossing()
     {
-
         $solar = new MagnetopauseCrossing();
         $test = $solar->getMagnetopauseCrossing();
         //endpoint appears to be broken on NASA side. Expect null for now.

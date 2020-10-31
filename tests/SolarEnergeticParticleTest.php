@@ -11,7 +11,6 @@ class SolarEnergeticParticleTest extends TestCase
 {
     public function testGetSolarEnergeticParticle()
     {
-
         $solar = new SolarEnergeticParticle();
         $test = $solar->getSolarEnergeticParticle();
         //endpoint appears to be broken on NASA side. Expect null for now.

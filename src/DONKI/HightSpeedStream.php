@@ -4,11 +4,11 @@ namespace Coderjerk\NasaPhp\DONKI;
 
 use Coderjerk\NasaPhp\Request;
 
-class RadiationBeltEnhancement
+class HightSpeedStream
 {
-    public static $uri = 'DONKI/RBE';
+    public static $uri = 'DONKI/HSS';
 
-    public function getRadiationBeltEnhancement($params = [])
+    public function getHightSpeedStream($params = [])
     {
         $end_date = date('Y-m-d');
         $start_date = date('Y-m-d', strtotime('-30 days'));

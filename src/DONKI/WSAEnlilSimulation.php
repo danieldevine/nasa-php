@@ -4,11 +4,12 @@ namespace Coderjerk\NasaPhp\DONKI;
 
 use Coderjerk\NasaPhp\Request;
 
-class RadiationBeltEnhancement
-{
-    public static $uri = 'DONKI/RBE';
+class WSAEnlilSimulation
 
-    public function getRadiationBeltEnhancement($params = [])
+{
+    public static $uri = 'DONKI/WSAEnlilSimulations';
+
+    public function getWSAEnlilSimulation($params = [])
     {
         $end_date = date('Y-m-d');
         $start_date = date('Y-m-d', strtotime('-30 days'));

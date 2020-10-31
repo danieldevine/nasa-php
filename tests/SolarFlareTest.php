@@ -11,7 +11,6 @@ class SolarFlareTest extends TestCase
 {
     public function testGetSolarFlare()
     {
-
         $solar = new SolarFlare();
         $test = $solar->getSolarFlare();
         //endpoint appears to be broken on NASA side. Expect null for now.

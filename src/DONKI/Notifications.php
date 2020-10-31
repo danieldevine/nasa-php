@@ -4,11 +4,18 @@ namespace Coderjerk\NasaPhp\DONKI;
 
 use Coderjerk\NasaPhp\Request;
 
-class RadiationBeltEnhancement
-{
-    public static $uri = 'DONKI/RBE';
+class Notifications
 
-    public function getRadiationBeltEnhancement($params = [])
+{
+    public static $uri = 'DONKI/notifications';
+
+    /**
+     *
+     *
+     * @param array $params
+     * @return void
+     */
+    public function getNotifications($params = [])
     {
         $end_date = date('Y-m-d');
         $start_date = date('Y-m-d', strtotime('-30 days'));
@@ -16,6 +23,7 @@ class RadiationBeltEnhancement
         $default_params = [
             'startDate' => $start_date,
             'endDate' => $end_date,
+            'type'    => 'all' //' all, FLR, SEP, CME, IPS, MPC, GST, RBE, report
         ];
 
         $params = array_merge($default_params, $params);
