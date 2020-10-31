@@ -2,25 +2,24 @@
 
 namespace Coderjerk\NasaPhp\Tests;
 
-use Coderjerk\NasaPhp\DONKI;
+use Coderjerk\NasaPhp\DONKI\CoronalMassEjection;
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertIsArray;
 
-class DONKITest extends TestCase
+class CoronalMassEjectionTest extends TestCase
 {
     public function testGetCoronalMassEjection()
     {
-        // $apod = new APOD;
         $date = date('Y-m-d');
         $start_date = date('Y-m-d', strtotime('-7 days'));
 
         $dates = [
-            'start_date' => $start_date,
-            'end_date' => $date
+            'startDate' => $start_date,
+            'endDate' => $date
         ];
 
-        $donki = new DONKI($dates);
+        $donki = new CoronalMassEjection($dates);
         $cme =  $donki->getCoronalMassEjection();
 
         assertIsArray($cme);
@@ -28,16 +27,15 @@ class DONKITest extends TestCase
 
     public function testGetCoronalMassEjectionAnalysis()
     {
-        // $apod = new APOD;
         $date = date('Y-m-d');
         $start_date = date('Y-m-d', strtotime('-10 days'));
 
         $dates = [
-            'start_date' => $start_date,
-            'end_date' => $date
+            'startDate' => $start_date,
+            'endDate' => $date
         ];
 
-        $donki = new DONKI($dates);
+        $donki = new CoronalMassEjection($dates);
         $cmeA =  $donki->getCoronalMassEjectionAnalysis();
 
         assertIsArray($cmeA);

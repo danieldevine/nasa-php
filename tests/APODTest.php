@@ -22,7 +22,7 @@ class APODTest extends TestCase
         $apod = new APOD;
 
         $date =
-            date('Y-m-d');
+            date('Y-m-d', strtotime('-2 days'));
         $test = $apod->getApod($date);
 
         assertIsObject($test);

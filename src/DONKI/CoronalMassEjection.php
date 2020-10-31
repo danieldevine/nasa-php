@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderjerk\NasaPhp;
+namespace Coderjerk\NasaPhp\DONKI;
 
 use Coderjerk\NasaPhp\Request;
 
@@ -13,7 +13,7 @@ use Coderjerk\NasaPhp\Request;
  * @author Dan Devine <jerk@coderjerk.com>
  * @since 1.0.0
  */
-class DONKI
+class CoronalMassEjection
 {
     /**
      * shared uri
@@ -41,8 +41,8 @@ class DONKI
     public function getCoronalMassEjection()
     {
         $params = [
-            'start_date' => $this->dates['start_date'],
-            'end_date' => $this->dates['end_date']
+            'startDate' => $this->dates['startDate'],
+            'endDate' => $this->dates['endDate']
         ];
 
         $uri = self::$uri  . '/CME';
@@ -62,8 +62,8 @@ class DONKI
     public function getCoronalMassEjectionAnalysis($params = [])
     {
         $default_params = [
-            'startDate' => $this->dates['start_date'],
-            'endDate' => $this->dates['end_date'],
+            'startDate' => $this->dates['startDate'],
+            'endDate' => $this->dates['endDate'],
             'mostAccurateOnly' => true,
             'completeEntryOnly' => true,
             'speed' => 0, //lower limit

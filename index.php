@@ -3,11 +3,14 @@ require_once('bootstrap.php');
 
 use Coderjerk\NasaPhp\APOD;
 use Coderjerk\NasaPhp\NeoW;
-use Coderjerk\NasaPhp\DONKI;
+use Coderjerk\NasaPhp\DONKI\CoronalMassEjection;
+use Coderjerk\NasaPhp\DONKI\InterplanetaryShock;
+use Coderjerk\NasaPhp\DONKI\GeomagneticStorm;
+use Coderjerk\NasaPhp\Tests\InterplanetaryShockTest;
 
 // $apod = new APOD;
-$date = date('Y-m-d');
-$start_date = date('Y-m-d', strtotime('-7 days'));
+// $date = date('Y-m-d');
+// $start_date = date('Y-m-d', strtotime('-7 days'));
 
 // $result = $apod->getApod($date, false);
 // d($result);
@@ -24,12 +27,24 @@ $start_date = date('Y-m-d', strtotime('-7 days'));
 // $single = $neow->getAsteroidById('54075541');
 // d($single);
 
-$dates = [
-    'start_date' => $start_date,
-    'end_date' => $date
+// $dates = [
+//     'start_date' => $start_date,
+//     'end_date' => $date
+// ];
+
+// $donki = new CoronalMassEjection($dates);
+
+// $donk = $donki->getCoronalMassEjectionAnalysis();
+// d($donk);
+
+// $geomag = new GeomagneticStorm();
+// $test = $geomag->getGeomagneticStorm();
+
+// d($test);
+$params = [
+    'location' => 'Earth',
 ];
 
-$donki = new DONKI($dates);
-
-$donk = $donki->getCoronalMassEjectionAnalysis();
-d($donk);
+$ishock = new InterplanetaryShock;
+$test = $ishock->getInterplanetaryShock($params);
+d($test);
