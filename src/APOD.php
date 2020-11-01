@@ -38,7 +38,7 @@ class APOD
     /**
      * Grabs a random Pic of the day.
      *
-     * @return void
+     * @return Object
      */
     public function getRandomApod()
     {

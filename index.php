@@ -1,48 +1,33 @@
 <?php
+
 require_once('bootstrap.php');
 
 use Coderjerk\NasaPhp\APOD;
-use Coderjerk\NasaPhp\NeoW;
-use Coderjerk\NasaPhp\DONKI\CoronalMassEjection;
-use Coderjerk\NasaPhp\DONKI\InterplanetaryShock;
-use Coderjerk\NasaPhp\DONKI\GeomagneticStorm;
-use Coderjerk\NasaPhp\Tests\InterplanetaryShockTest;
+
+$date = date('Y-m-d', strtotime('-1 days'));
+$hd = true;
 
 $apod = new APOD;
+$pic = $apod->getApod('2019-12-09', $hd);
 
-$result = $apod->getRandomApod();
-d($result);
+if ($pic->media_type == 'image') {
+    echo "<img src='" . $pic->url . "' title='" . $pic->title . "' alt='NASA Astronomy picture of the day:" . $pic->title . " '/>";
+} else {
+    echo "<iframe src='" . $pic->url . "' width='740px' height='400px'></iframe>";
+}
+echo "<h3>Astronomy picture of the day" . $pic->date . $pic->title . "</h3>";
+echo "<p>" . $pic->explanation . "</p>";
+echo property_exists($pic, 'copyright') ?  '<p>&copy;' . $pic->copyright . '</p>' : '';
 
-// $neow = new NeoW;
+$apod = new APOD;
+$pic = $apod->getRandomApod();
 
-
-// $result = $neow->getAsteroidFeed($start_date, $date);
-// d($result);
-
-// $result = $neow->getPotentiallyHazardousAsteroids($start_date, $date);
-// d($result);
-
-// $single = $neow->getAsteroidById('54075541');
-// d($single);
-
-// $dates = [
-//     'start_date' => $start_date,
-//     'end_date' => $date
-// ];
-
-// $donki = new CoronalMassEjection($dates);
-
-// $donk = $donki->getCoronalMassEjectionAnalysis();
-// d($donk);
-
-// $geomag = new GeomagneticStorm();
-// $test = $geomag->getGeomagneticStorm();
-
-// d($test);
-$params = [
-    'location' => 'Earth',
-];
-
-$ishock = new InterplanetaryShock;
-$test = $ishock->getInterplanetaryShock($params);
-d($test);
+//2019-12-09 - non image
+if ($pic->media_type == 'image') {
+    echo "<img src='" . $pic->url . "' title='" . $pic->title . "' alt='NASA Astronomy picture of the day:" . $pic->title . " '/>";
+} else {
+    echo "<iframe src='" . $pic->url . "' width='740px' height='400px'></iframe>";
+}
+echo "<h3>Astronomy picture of the day" . $pic->date . $pic->title . "</h3>";
+echo "<p>" . $pic->explanation . "</p>";
+echo property_exists($pic, 'copyright') ?  '<p>&copy;' . $pic->copyright . '</p>' : '';

@@ -32,24 +32,46 @@ HTTP Request GET https://api.nasa.gov/planetary/apod
 
 ---
 
+
 ## Examples
 
 ```php
-
 use Coderjerk\NasaPhp\APOD;
 
-$date = date('Y-m-d');
+$date = date('Y-m-d', strtotime('-1 days'));
 $hd = true;
 
 $apod = new APOD;
-$apod->getApod($date, $hd);
+// the api can sometimes return a video rather than an image. This example handles a video.
+$pic = $apod->getApod('2019-12-09', $hd);
 
-echo "<img src='. $apod->url .' alt='.$apod->explanation.'/>";
+if ($pic->media_type == 'image') {
+    echo "<img src='" . $pic->url . "' title='" . $pic->title . "' alt='NASA Astronomy picture of the day:" . $pic->title . " '/>";
+    echo "<h3>Astronomy picture of the day" . $pic->date . $pic->title . "</h3>";
+    echo "<p>" . $pic->explanation . "</p>";
+    echo property_exists($pic, 'copyright') ?  '<p>&copy;' . $pic->copyright . '</p>' : '';
+} else {
+    echo "<iframe src='" . $pic->url . "'></iframe>";
+    echo "<h3>Astronomy picture of the day" . $pic->date . $pic->title . "</h3>";
+    echo "<p>" . $pic->explanation . "</p>";
+    echo property_exists($pic, 'copyright') ?  '<p>&copy;' . $pic->copyright . '</p>' : '';
+}
 
 $apod = new APOD;
+$pic = $apod->getRandomApod();
 
-$result = $apod->getRandomApod();
-d($result);
+
+if ($pic->media_type == 'image') {
+    echo "<img src='" . $pic->url . "' title='" . $pic->title . "' alt='NASA Astronomy picture of the day:" . $pic->title . " '/>";
+    echo "<h3>Astronomy picture of the day" . $pic->date . $pic->title . "</h3>";
+    echo "<p>" . $pic->explanation . "</p>";
+    echo property_exists($pic, 'copyright') ?  '<p>&copy;' . $pic->copyright . '</p>' : '';
+} else {
+    echo "<iframe src='" . $pic->url . "'></iframe>";
+    echo "<h3>Astronomy picture of the day" . $pic->date . $pic->title . "</h3>";
+    echo "<p>" . $pic->explanation . "</p>";
+    echo property_exists($pic, 'copyright') ?  '<p>&copy;' . $pic->copyright . '</p>' : '';
+}
 
 ```
 

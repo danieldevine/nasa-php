@@ -4,7 +4,13 @@ A PHP Client library to provide a useful abstraction and methods for the complet
 
 **Would not advise putting anywhere near production until v1.0.0 comes out**
 
+To install, using composer.
+
+```bash
+$ composer require coderjerk/nasa-php
+```
 
 - [APOD](docs/apod/README.md)
 - [Asteroid NeoW](docs/neows/README.md)
 - [DONKI](docs/donki/README.md)
+
