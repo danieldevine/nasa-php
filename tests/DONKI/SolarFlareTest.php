@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderjerk\NasaPhp\Tests;
+namespace Coderjerk\NasaPhp\DONKI\Tests;
 
 use Coderjerk\NasaPhp\DONKI\SolarFlare;
 use PHPUnit\Framework\TestCase;

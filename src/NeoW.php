@@ -13,7 +13,6 @@ class NeoW
 
     public static $uri = 'neo/rest/v1/';
 
-
     /**
      * Retrieves a list of Asteroids based
      * on their closest approach date to Earth.
