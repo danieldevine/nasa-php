@@ -34,4 +34,20 @@ class APOD
         $request = new Request();
         return $request->makeRequest('GET', self::$uri, $params);
     }
+
+    /**
+     * Grabs a random Pic of the day.
+     *
+     * @return void
+     */
+    public function getRandomApod()
+    {
+        $first_apod = 1420070400; // 01/01/2015
+        $last_apod = time();
+        $random_timestamp = mt_rand($first_apod, $last_apod);
+        $date = date('Y-m-d', $random_timestamp);
+
+        $random_apod =  $this->getApod($date, false);
+        return $random_apod;
+    }
 }

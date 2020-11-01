@@ -8,12 +8,10 @@ use Coderjerk\NasaPhp\DONKI\InterplanetaryShock;
 use Coderjerk\NasaPhp\DONKI\GeomagneticStorm;
 use Coderjerk\NasaPhp\Tests\InterplanetaryShockTest;
 
-// $apod = new APOD;
-// $date = date('Y-m-d');
-// $start_date = date('Y-m-d', strtotime('-7 days'));
+$apod = new APOD;
 
-// $result = $apod->getApod($date, false);
-// d($result);
+$result = $apod->getRandomApod();
+d($result);
 
 // $neow = new NeoW;
 

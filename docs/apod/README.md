@@ -24,9 +24,11 @@ HTTP Request GET https://api.nasa.gov/planetary/apod
 
 ## Methods
 
-| Method    |    Args     | Returns |
-|-----------|-------------|---------|
-| getApod() | $date, $hd  | 'copyright' String, 'date' String YYYY-MM-DD, 'explanation' String, 'hdurl' String, 'media type' String,'service version' String,'title' String, 'url' String |
+| Method    | Description
+|-----------|-------|
+| getApod($date, $hd) | Gets picture of the day for specified day.
+| getRandomApod() | Gets picture of the day for a random date between 01/01/2015 and now.
+
 
 ---
 
@@ -43,6 +45,11 @@ $apod = new APOD;
 $apod->getApod($date, $hd);
 
 echo "<img src='. $apod->url .' alt='.$apod->explanation.'/>";
+
+$apod = new APOD;
+
+$result = $apod->getRandomApod();
+d($result);
 
 ```
 

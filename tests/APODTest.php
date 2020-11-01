@@ -17,7 +17,7 @@ class APODTest extends TestCase
         assertEquals($apod::$uri, 'planetary/apod');
     }
 
-    public function testGetDataFromApodEndpoint()
+    public function testApodEndpoint()
     {
         $apod = new APOD;
 
@@ -27,5 +27,14 @@ class APODTest extends TestCase
 
         assertIsObject($test);
         assertObjectHasAttribute('title', $test);
+    }
+
+    public function testRandomApod()
+    {
+        $apod = new APOD;
+
+        $result = $apod->getRandomApod();
+        assertIsObject($result);
+        assertObjectHasAttribute('media_type', $result);
     }
 }
