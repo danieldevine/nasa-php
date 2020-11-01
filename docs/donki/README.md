@@ -3,6 +3,18 @@ Endpoints of The Space Weather Database Of Notifications, Knowledge, Information
 
 This API consists of the following component services:
 
+  - [Coronal Mass Ejection (CME)](#coronal-mass-ejection-cme)
+  - [Coronal Mass Ejection (CME) Analysis](#coronal-mass-ejection-cme-analysis)
+  - [Geomagnetic Storm (GST)](#geomagnetic-storm-gst)
+  - [Interplanetary Shock (IPS)](#interplanetary-shock-ips)
+  - [Solar Flare (FLR)](#solar-flare-flr)
+  - [Solar Energetic Particle (SEP)](#solar-energetic-particle-sep)
+  - [Magnetopause Crossing (MPC)](#magnetopause-crossing-mpc)
+  - [Radiation Belt Enhancement (RBE)](#radiation-belt-enhancement-rbe)
+  - [Hight Speed Stream (HSS)](#hight-speed-stream-hss)
+  - [WSA+EnlilSimulation](#wsaenlilsimulation)
+  - [Notifications](#notifications)
+
 
 ## Coronal Mass Ejection (CME)
 | Param | Description |
