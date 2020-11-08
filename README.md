@@ -44,6 +44,7 @@ Details on how to use each endpoint can be found here:
 - [APOD](docs/apod/README.md)
 - [Asteroid NeoW](docs/neows/README.md)
 - [DONKI](docs/donki/README.md)
+- [EARTH](docs/earth/README.md)
 
 ## Tests
 run all tests:

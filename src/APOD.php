@@ -16,7 +16,7 @@ class APOD
     public static $uri = 'planetary/apod';
 
     /**
-     * Retrieves an image and image data for a given date.
+     * Retrieves a icture of the day object for a given date.
      *
      * @param String $date formatted YYYY-MM-DD
      * @param Boolean $hd
@@ -36,7 +36,7 @@ class APOD
     }
 
     /**
-     * Grabs a random Pic of the day.
+     * Grabs a random picture of the day.
      *
      * @return Object
      */
@@ -47,7 +47,23 @@ class APOD
         $random_timestamp = mt_rand($first_apod, $last_apod);
         $date = date('Y-m-d', $random_timestamp);
 
-        $random_apod =  $this->getApod($date, false);
+        $random_apod = $this->getApod($date, false);
         return $random_apod;
+    }
+
+    /**
+     * Echoes the picture or video of the day
+     * as either an img element or an iframe
+     *
+     * @param Object $apod the apod object
+     * @return String
+     */
+    public function getApodMedia($apod)
+    {
+        if ($apod->media_type == 'image') {
+            echo "<img src='" . $apod->url . "' title='" . $apod->title . "' alt='NASA Astronomy picture of the day:" . $apod->title . " '/>";
+        } else {
+            echo "<iframe src='" . $apod->url . "'></iframe>";
+        }
     }
 }
